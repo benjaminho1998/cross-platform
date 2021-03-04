@@ -3,6 +3,10 @@ import './Sidebar.sass';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const Sidebar = () => {
+
+    const categories = ['Action', 'Adventure', 'Puzzle', 'Racing', 'RPG', 'Shooter', 'Sports', 'Strategy'];
+    const platforms = ['PC', 'PlayStation', 'Xbox'];
+
     return (
         <div className="sidebar-container">
             <div className="side-big-text">
@@ -16,9 +20,9 @@ const Sidebar = () => {
                     Platforms
                 </span>
                 <ListGroup variant="flush">
-                    <ListGroup.Item className="sidebar-list-item">PC</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">PlayStation</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Xbox</ListGroup.Item>
+                    {platforms.map((platform, index) => 
+                        <ListGroup.Item key={index} className="sidebar-list-item">{platform}</ListGroup.Item>
+                    )}
                 </ListGroup>
             </div>
             <div>
@@ -26,14 +30,9 @@ const Sidebar = () => {
                     Genre
                 </span>
                 <ListGroup variant="flush">
-                    <ListGroup.Item className="sidebar-list-item">Action</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Adventure</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Puzzle</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Racing</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">RPG</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Shooter</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Sports</ListGroup.Item>
-                    <ListGroup.Item className="sidebar-list-item">Strategy</ListGroup.Item>
+                    {categories.map((category, index) => 
+                        <ListGroup.Item key={index} className="sidebar-list-item">{category}</ListGroup.Item>
+                    )}
                 </ListGroup>
             </div>
         </div>
